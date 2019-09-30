@@ -1,13 +1,14 @@
-/.project
-/bin/
-/.settings/
-/.classpath
+.project
+.pydevproject
+bin/
+.settings/
+.classpath
 *.retry
-/.terraform/
-/inventory.cfg
-/terraform.tfstate
-/terraform.tfstate.backup
-/.terraform.tfstate.lock.info
-/rds-inventory.cfg
+.terraform/
+inventory.cfg
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.tfstate.lock.info
+rds-inventory.cfg
 *.idea
 
