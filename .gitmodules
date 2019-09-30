@@ -24,10 +24,10 @@
 	url = git@github.com:stericbro/estafet-microservices-scrum-api-task.git
 [submodule "estafet-microservices-scrum-api-discovery"]
 	path = estafet-microservices-scrum-api-discovery
-	url = git@github.com:stericbro/estafet-microservices-scrum-api-discovery
+	url = git@github.com:stericbro/estafet-microservices-scrum-api-discovery.git
 [submodule "estafet-microservices-scrum-api-gateway"]
 	path = estafet-microservices-scrum-api-gateway
-	url = git@github.com:stericbro/estafet-microservices-scrum-api-gateway
+	url = git@github.com:stericbro/estafet-microservices-scrum-api-gateway.git
 [submodule "estafet-microservices-scrum-qa"]
 	path = estafet-microservices-scrum-qa
 	url = git@github.com:stericbro/estafet-microservices-scrum-qa.git
