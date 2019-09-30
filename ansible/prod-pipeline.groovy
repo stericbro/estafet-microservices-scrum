@@ -6,7 +6,7 @@ def getDeploymentConfigs(dc, imageStreams) {
     if (count > 0) {
         def matcher = line =~ /(\w+\-\w+)(.*)/
       	if (imageStreams.contains(matcher[0][1])) {
-      		configs << matcher[0][1]		
+      		configs << matcher[0][1]
       	}
     }
     count++
@@ -82,11 +82,11 @@ def getLatestImage(microservice) {
 	} else {
 		throw new RuntimeException("cannot find latest image for ${microservice}")
 	}
-	
+
 }
 
 node {
-	
+
 	stage ('deploy each microservice') {
 		sh "oc get is -n prod > is.output"
 		def is = readFile('is.output')
@@ -98,11 +98,11 @@ node {
 					if (!isLatestImageDeployed(microservice)) {
 						println "deploying ${microservice}..."
 		        openshiftDeploy namespace: "prod", depCfg: microservice
-		        openshiftVerifyDeployment namespace: "prod", depCfg: microservice, replicaCount:"1", verifyReplicaCount: "true", waitTime: "600000"	
+		        openshiftVerifyDeployment namespace: "prod", depCfg: microservice, replicaCount:"1", verifyReplicaCount: "true", waitTime: "600000"
 		        println "${microservice} deployed"
 					} else {
 						println "${microservice} latest image is already deployed"
 					}
-	  }	
+	  }
 	}
 }

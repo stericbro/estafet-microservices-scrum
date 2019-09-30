@@ -34,7 +34,6 @@
     version: openshift-ansible-3.9.27-1
     update: yes
   tags:
-    - git  
+    - git
 
 
-    

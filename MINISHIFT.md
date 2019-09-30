@@ -13,17 +13,17 @@ VMWare supports nested virtualisation for Intel processors, but there are licens
 
 ## Contents
 
-* [Prerequisites](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/MINISHIFT.md#Prerequisites)
-* [Nested Virtualization with Intel](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/MINISHIFT.md#nested-virtualization)
-* [Installation](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/MINISHIFT.md#Installation)
-* [Configuration](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/MINISHIFT.md#Configuration)
-* [Running Minishift](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/MINISHIFT.md#running-minishift)
+* [Prerequisites](https://github.com/stericbro/estafet-microservices-scrum/blob/master/MINISHIFT.md#Prerequisites)
+* [Nested Virtualization with Intel](https://github.com/stericbro/estafet-microservices-scrum/blob/master/MINISHIFT.md#nested-virtualization)
+* [Installation](https://github.com/stericbro/estafet-microservices-scrum/blob/master/MINISHIFT.md#Installation)
+* [Configuration](https://github.com/stericbro/estafet-microservices-scrum/blob/master/MINISHIFT.md#Configuration)
+* [Running Minishift](https://github.com/stericbro/estafet-microservices-scrum/blob/master/MINISHIFT.md#running-minishift)
 
 ## <a name="Prerequisites"></a>Prerequisites
 
 ### KVM
 
-KVM (Kernel-based Virtual Machine) is virtualization software for CentOS or RHEL 7. KVM turns your laptop into a hypervisor. 
+KVM (Kernel-based Virtual Machine) is virtualization software for CentOS or RHEL 7. KVM turns your laptop into a hypervisor.
 
 Before installing KVM,  make sure that Virtualization Technology (VT) is enabled in your laptop’s BIOS. Run this command to
 verify that your laptop supports (VT):
@@ -91,9 +91,9 @@ Nested virtualization should only be used when your VM host is Windows and one o
   1. You cannot get Minishift to run under Windows
   2. You don't have [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about "Windows Subsystem for Linux") (WSL) installed
   3. You cannot get Minishift to work with WSL.
- 
+
 Nested Virtualisation is not required if your VM host is running Linux.
- 
+
 As you may expect, it is very resource intensive running (slow) a Minishift VM
 within a Linux VM hostsed on Windows.
 
@@ -105,7 +105,7 @@ The necessary steps to run Minishift nested in a Linux VM are as follows:
 * Download and install the [VMWare Workstation Player](https://www.vmware.com/uk/products/workstation-player.html "VMWare Workstation PLayer")
 * Run the VMWare Player and create a Linux VM with the Virtualization engine '`Virtualize Intel VT-x/EPT or AMD-V/RVI`' box checked under the Processors tab
 * Follow [these instructions](https://docs.fedoraproject.org/en-US/quick-docs/using-nested-virtualization-in-kvm/ "nested virtualization") on the Fedora website.
-* [Install Minishift](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/MINISHIFT.md#Installation) in the Linix VM you just created.
+* [Install Minishift](https://github.com/stericbro/estafet-microservices-scrum/blob/master/MINISHIFT.md#Installation) in the Linix VM you just created.
 
 ## <a name="Installation"></a>Install Minishift
 
@@ -181,7 +181,7 @@ These are suggested values:
 | Settings         | Value         |
 | -------------    |:--------------|
 | Virtualization   | `KVM`         |
-| Memory           | `8Gb`         | 
+| Memory           | `8Gb`         |
 | Number of CPUs   | `4`           |
 | Disk Space       | `100Gb`       |
 
@@ -205,8 +205,8 @@ Starting minishift VM ...
 -- Checking if requested OpenShift version 'v3.11.0' is valid ... OK
 -- Checking if requested OpenShift version 'v3.11.0' is supported ... OK
 -- Checking if requested hypervisor 'kvm' is supported on this platform ... OK
--- Checking if KVM driver is installed ... 
-   Driver is available at /usr/local/bin/docker-machine-driver-kvm ... 
+-- Checking if KVM driver is installed ...
+   Driver is available at /usr/local/bin/docker-machine-driver-kvm ...
    Checking driver binary is executable ... OK
 -- Checking if Libvirt is installed ... OK
 -- Checking if Libvirt default network is present ... OK
@@ -226,9 +226,9 @@ Starting minishift VM ...
 -- Starting Minishift VM .............. OK
 -- Checking for IP address ... OK
 -- Checking for nameservers ... OK
--- Checking if external host is reachable from the Minishift VM ... 
+-- Checking if external host is reachable from the Minishift VM ...
    Pinging 8.8.8.8 ... OK
--- Checking HTTP connectivity from the VM ... 
+-- Checking HTTP connectivity from the VM ...
    Retrieving http://minishift.io/index.html ... OK
 -- Checking if persistent storage volume is mounted ... OK
 -- Checking available disk space ... 1% used OK
