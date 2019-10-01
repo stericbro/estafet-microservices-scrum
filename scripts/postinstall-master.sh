@@ -25,7 +25,7 @@
 # Create the credentials for the OKD admin user.
 function createAdminUser() {
     echo "INFO: Creating the OKD admin user ..."
-    htpasswd -cb /etc/origin/master/htpasswd admin 123 || {
+    sudo htpasswd -cb /etc/origin/master/htpasswd admin 123 || {
         echo "ERROR: Failed to create the OKD Admin user."
         return 1
     }
@@ -125,7 +125,7 @@ function update_docker_configuration() {
     echo "INFO: Updating the Docker configuration in ${docker_config_file} ..."
     # sed command to replace line containing "OPTIONS="
     local sed_command="/${options_key}=.*/c\\\\${updated_docker_options}"
-    sed -i "${sed_command}" "${docker_config_file}" || {
+    sudo sed -i "${sed_command}" "${docker_config_file}" || {
         echo "ERROR: Failed to update the Docker configuration in ${docker_config_file}."
         return 1
     }
@@ -140,7 +140,7 @@ function stop_service() {
 
     echo "INFO: Stopping the ${the_service} service ..."
 
-    chkconfig "${the_service}" || {
+    sudo chkconfig "${the_service}" || {
         echo "INFO: The ${the_service} service does not exist."
         return 0
     }
@@ -150,7 +150,7 @@ function stop_service() {
         return 0
     }
 
-    service stop "${the_service}" || {
+    sudo service stop "${the_service}" || {
         echo "ERROR: The ${the_service} service did not stop."
         return 1
     }
@@ -165,17 +165,17 @@ function start_service() {
 
     echo "INFO: Starting the ${the_service} service ..."
 
-    chkconfig "${the_service}" || {
+    sudo chkconfig "${the_service}" || {
         echo "INFO: The ${the_service} service does not exist."
         return 0
     }
 
-    service status "${the_service}" | grep -qc "running" && {
+    sudo service status "${the_service}" | grep -qc "running" && {
         echo "INFO: The ${the_service} service is already running."
         return 0
     }
 
-    service start "${the_service}" || {
+    sudo service start "${the_service}" || {
         echo "ERROR: The ${the_service} service did not start."
         return 1
     }
@@ -190,13 +190,13 @@ function stop_service_systemctl() {
 
     echo "INFO: Stopping the $1 service ..."
 
-    systemctl list-unit-files | grep -qc "${the_service}" || {
+    sudo systemctl list-unit-files | grep -qc "${the_service}" || {
         echo "INFO: The $1 service does not exist."
         return 0
     }
 
     declare status=
-    status="$(systemctl is-active "${the_service}")"
+    status="$(sudo systemctl is-active "${the_service}")"
 
     echo "INFO: The status of the $1 service is \"${status}\"."
 
@@ -205,7 +205,7 @@ function stop_service_systemctl() {
         return 0
     fi
 
-    systemctl stop "${the_service}" || {
+    sudo systemctl stop "${the_service}" || {
         echo "ERROR: The $1 service did not stop."
         return 1
     }
@@ -220,13 +220,13 @@ function start_service_systemctl() {
 
     echo "INFO: Starting the $1 service ..."
 
-    systemctl list-unit-files | grep -qc "${the_service}" || {
+    sudo systemctl list-unit-files | grep -qc "${the_service}" || {
         echo "The $1 service does not exist."
         return 0
     }
 
     declare status=
-    status="$(systemctl is-active "${the_service}")"
+    status="$(sudo systemctl is-active "${the_service}")"
 
     echo "INFO: The status of the $1 service is \"${status}\"."
 
@@ -235,7 +235,7 @@ function start_service_systemctl() {
         return 0
     fi
 
-    systemctl start "${the_service}" || {
+    sudo systemctl start "${the_service}" || {
         echo "ERROR: The $1 service did not start."
         return 1
     }
@@ -311,19 +311,9 @@ HOSTNAME="$(hostname -f)"
 
 echo "INFO: Running ${DIR}/${NAME} on ${HOSTNAME} ..."
 
-# Elevate privileges and retain the ec2-user's environment.
-#
-# This only works when the script is run via ssh:
-#
-# e.g.:
-#
-#    - cat ./scripts/postinstall-master.sh | ssh -A ec2-user@ems-bastion.openshift.local ssh master.openshift.local
-#
-sudo -E su
-
 echo "INFO: Updating packages ..."
 
-yum -y update
+sudo yum -y update
 
 createAdminUser || exit 1
 
@@ -360,7 +350,7 @@ updated_docker_options="$(update_docker_options "current_array" "additional_arra
 update_docker_configuration || exit 1
 
 echo "INFO: Restarting services ..."
-systemctl >/dev/null 2>&1; declare -i status=$?
+sudo systemctl >/dev/null 2>&1; declare -i status=$?
 
 if [[ ${status} -eq 127 ]]; then
     # systemctl is not available.
