@@ -150,7 +150,7 @@ sudo -E su
 echo "INFO: updating packages ..."
 yum -y update
 
-install_dev_tool || exit 1
+install_dev_tools || exit 1
 install_postgresql || exit 1
 install_ansible || exit 1
 insall_psycopg2 || exit 1
