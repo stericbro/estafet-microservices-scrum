@@ -1,33 +1,33 @@
 [submodule "estafet-microservices-scrum-api-project"]
-	path = estafet-microservices-scrum-api-project
-	url = git@github.com:stericbro/estafet-microservices-scrum-api-project.git
+    path = estafet-microservices-scrum-api-project
+    url = git@github.com:stericbro/estafet-microservices-scrum-api-project.git
 [submodule "estafet-microservices-scrum-api-sprint"]
-	path = estafet-microservices-scrum-api-sprint
-	url = git@github.com:stericbro/estafet-microservices-scrum-api-sprint.git
+    path = estafet-microservices-scrum-api-sprint
+    url = git@github.com:stericbro/estafet-microservices-scrum-api-sprint.git
 [submodule "estafet-microservices-scrum-api-story"]
-	path = estafet-microservices-scrum-api-story
-	url = git@github.com:stericbro/estafet-microservices-scrum-api-story.git
+    path = estafet-microservices-scrum-api-story
+    url = git@github.com:stericbro/estafet-microservices-scrum-api-story.git
 [submodule "estafet-microservices-scrum-basic-ui"]
-	path = estafet-microservices-scrum-basic-ui
-	url = git@github.com:stericbro/estafet-microservices-scrum-basic-ui.git
+    path = estafet-microservices-scrum-basic-ui
+    url = git@github.com:stericbro/estafet-microservices-scrum-basic-ui.git
 [submodule "estafet-microservices-scrum-api-sprint-board"]
-	path = estafet-microservices-scrum-api-sprint-board
-	url = git@github.com:stericbro/estafet-microservices-scrum-api-sprint-board.git
+    path = estafet-microservices-scrum-api-sprint-board
+    url = git@github.com:stericbro/estafet-microservices-scrum-api-sprint-board.git
 [submodule "estafet-microservices-scrum-api-project-burndown"]
-	path = estafet-microservices-scrum-api-project-burndown
-	url = git@github.com:stericbro/estafet-microservices-scrum-api-project-burndown.git
+    path = estafet-microservices-scrum-api-project-burndown
+    url = git@github.com:stericbro/estafet-microservices-scrum-api-project-burndown.git
 [submodule "estafet-microservices-scrum-api-sprint-burndown"]
-	path = estafet-microservices-scrum-api-sprint-burndown
-	url = git@github.com:stericbro/estafet-microservices-scrum-api-sprint-burndown.git
+    path = estafet-microservices-scrum-api-sprint-burndown
+    url = git@github.com:stericbro/estafet-microservices-scrum-api-sprint-burndown.git
 [submodule "estafet-microservices-scrum-api-task"]
-	path = estafet-microservices-scrum-api-task
-	url = git@github.com:stericbro/estafet-microservices-scrum-api-task.git
+    path = estafet-microservices-scrum-api-task
+    url = git@github.com:stericbro/estafet-microservices-scrum-api-task.git
 [submodule "estafet-microservices-scrum-api-discovery"]
-	path = estafet-microservices-scrum-api-discovery
-	url = git@github.com:stericbro/estafet-microservices-scrum-api-discovery.git
+    path = estafet-microservices-scrum-api-discovery
+    url = git@github.com:stericbro/estafet-microservices-scrum-api-discovery.git
 [submodule "estafet-microservices-scrum-api-gateway"]
-	path = estafet-microservices-scrum-api-gateway
-	url = git@github.com:stericbro/estafet-microservices-scrum-api-gateway.git
+    path = estafet-microservices-scrum-api-gateway
+    url = git@github.com:stericbro/estafet-microservices-scrum-api-gateway.git
 [submodule "estafet-microservices-scrum-qa"]
-	path = estafet-microservices-scrum-qa
-	url = git@github.com:stericbro/estafet-microservices-scrum-qa.git
+    path = estafet-microservices-scrum-qa
+    url = git@github.com:stericbro/estafet-microservices-scrum-qa.git

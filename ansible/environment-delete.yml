@@ -1,0 +1,30 @@
+---
+- debug:
+    msg: "Deleting the {{ project }} environment ..."
+
+- name: Check the environment exists.
+  shell: "oc get project {{ project }} -o jsonpath='{.metadata.name}'"
+  register: get_project_result
+  ignore_errors: yes
+  changed_when: false
+  tags:
+    - openshift
+
+- name: Set {{ project }} evironment exists fact.
+  set_fact:
+    environment_exists: "{{ get_project_result.rc == 0 }}"
+  changed_when: false
+  tags:
+    - openshift
+
+- name: Delete the {{ project }} environment.
+  shell: "oc delete project --grace-period 60 {{ project }}"
+  register: delete_project_result
+  when: environment_exists
+  failed_when: "delete_project_result.rc != 0"
+  changed_when: false
+  tags:
+    - openshift
+
+- debug:
+    msg: "Deleted the {{ project }} environment."

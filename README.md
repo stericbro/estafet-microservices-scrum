@@ -5,11 +5,11 @@ The application is designed to be deployed within an Openshift cluster and provi
 
 ## Contents
 
-* [Project Structure](https://github.com/Estafet-LTD/estafet-microservices-scrum#project-structure)
-* [Getting Started](https://github.com/Estafet-LTD/estafet-microservices-scrum#getting-started)
-* [Environments](https://github.com/Estafet-LTD/estafet-microservices-scrum#environments)
-* [Architecture](https://github.com/Estafet-LTD/estafet-microservices-scrum#architecture)
-* [Distributed Monitoring](https://github.com/Estafet-LTD/estafet-microservices-scrum#distributed-monitoring)
+* [Project Structure](https://github.com/stericbro/estafet-microservices-scrum#project-structure)
+* [Getting Started](https://github.com/stericbro/estafet-microservices-scrum#getting-started)
+* [Environments](https://github.com/stericbro/estafet-microservices-scrum#environments)
+* [Architecture](https://github.com/stericbro/estafet-microservices-scrum#architecture)
+* [Distributed Monitoring](https://github.com/stericbro/estafet-microservices-scrum#distributed-monitoring)
 
 ## Project Structure
 
@@ -20,25 +20,25 @@ Each microservice has its own Git repository. Separate Git repositories allow ea
 
 | Repository        | Description |
 | ----------------- |-------------|
-| [estafet-microservices-scrum-api-project](https://github.com/Estafet-LTD/estafet-microservices-scrum-api-project) | Microservices for managing scrum projects. |
-| [estafet-microservices-scrum-api-project-burndown](https://github.com/Estafet-LTD/estafet-microservices-scrum-api-project-burndown) | Microservices for aggregating and generating project burndown reports. |
-| [estafet-microservices-scrum-api-sprint](https://github.com/Estafet-LTD/estafet-microservices-scrum-api-sprint) | Microservices for managing sprints. |
-| [estafet-microservices-scrum-api-sprint-board](https://github.com/Estafet-LTD/estafet-microservices-scrum-api-sprint-board) | Microservices for aggregating and rendering a sprint board. |
-| [estafet-microservices-scrum-api-sprint-burndown](https://github.com/Estafet-LTD/estafet-microservices-scrum-api-sprint-burndown) | Microservices for aggregating and generating sprint burndown reports. |
-| [estafet-microservices-scrum-api-story](https://github.com/Estafet-LTD/estafet-microservices-scrum-api-story) | Microservices for managing stories. |
-| [estafet-microservices-scrum-api-task](https://github.com/Estafet-LTD/estafet-microservices-scrum-api-task) | Microservices for managing tasks. |
-| [estafet-microservices-scrum-api-discovery](https://github.com/Estafet-LTD/estafet-microservices-scrum-api-discovery) | Service Discovery for microservices. |
-| [estafet-microservices-scrum-api-gateway](https://github.com/Estafet-LTD/estafet-microservices-scrum-api-gateway) | Microservices API Gateway. |
-| [estafet-microservices-scrum-basic-ui](https://github.com/Estafet-LTD/estafet-microservices-scrum-basic-ui) | Basic User Interface that uses the scrum microservices. |
-| [estafet-microservices-scrum-lib](https://github.com/Estafet-LTD/estafet-microservices-scrum-lib) | Shared Libraries |
-| [estafet-microservices-scrum-qa](https://github.com/Estafet-LTD/estafet-microservices-scrum-qa) | Cross cutting Quality Assurance tests. |
+| [estafet-microservices-scrum-api-project](https://github.com/stericbro/estafet-microservices-scrum-api-project) | Microservices for managing scrum projects. |
+| [estafet-microservices-scrum-api-project-burndown](https://github.com/stericbro/estafet-microservices-scrum-api-project-burndown) | Microservices for aggregating and generating project burndown reports. |
+| [estafet-microservices-scrum-api-sprint](https://github.com/stericbro/estafet-microservices-scrum-api-sprint) | Microservices for managing sprints. |
+| [estafet-microservices-scrum-api-sprint-board](https://github.com/stericbro/estafet-microservices-scrum-api-sprint-board) | Microservices for aggregating and rendering a sprint board. |
+| [estafet-microservices-scrum-api-sprint-burndown](https://github.com/stericbro/estafet-microservices-scrum-api-sprint-burndown) | Microservices for aggregating and generating sprint burndown reports. |
+| [estafet-microservices-scrum-api-story](https://github.com/stericbro/estafet-microservices-scrum-api-story) | Microservices for managing stories. |
+| [estafet-microservices-scrum-api-task](https://github.com/stericbro/estafet-microservices-scrum-api-task) | Microservices for managing tasks. |
+| [estafet-microservices-scrum-api-discovery](https://github.com/stericbro/estafet-microservices-scrum-api-discovery) | Service Discovery for microservices. |
+| [estafet-microservices-scrum-api-gateway](https://github.com/stericbro/estafet-microservices-scrum-api-gateway) | Microservices API Gateway. |
+| [estafet-microservices-scrum-basic-ui](https://github.com/stericbro/estafet-microservices-scrum-basic-ui) | Basic User Interface that uses the scrum microservices. |
+| [estafet-microservices-scrum-lib](https://github.com/stericbro/estafet-microservices-scrum-lib) | Shared Libraries |
+| [estafet-microservices-scrum-qa](https://github.com/stericbro/estafet-microservices-scrum-qa) | Cross cutting Quality Assurance tests. |
 
 ## Getting started
 There are a couple of installation options for the demo application:
 
-* [Local Environment Setup](https://github.com/Estafet-LTD/estafet-microservices-scrum#local-environment-setup)
-* [Local Test Environment Setup](https://github.com/Estafet-LTD/estafet-microservices-scrum#test-environment-setup)
-* [DevOps Environment Setup](https://github.com/Estafet-LTD/estafet-microservices-scrum#devops-environment-setup)
+* [Local Environment Setup](https://github.com/stericbro/estafet-microservices-scrum#local-environment-setup)
+* [Local Test Environment Setup](https://github.com/stericbro/estafet-microservices-scrum#test-environment-setup)
+* [DevOps Environment Setup](https://github.com/stericbro/estafet-microservices-scrum#devops-environment-setup)
 
 ### Prerequisites
 Please review the prerequisites below before continuing with the deployment steps:
@@ -47,7 +47,7 @@ Please review the prerequisites below before continuing with the deployment step
 
 There are three ways of installing OpenShift on a laptop for development:
 
-* Use Minishift (See The [MINISHIFT.md](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/MINISHIFT.md).
+* Use Minishift (See The [MINISHIFT.md](https://github.com/stericbro/estafet-microservices-scrum/blob/master/MINISHIFT.md).
 * "oc cluster up (See this [Medium article](https://medium.com/@fabiojose/working-with-oc-cluster-up-a052339ea219 "Medium article"))
 * Install OKD on your laptop (see this [YouTube video](https://youtu.be/ZkFIozGY0IA) "YouTube video")
 
@@ -85,7 +85,7 @@ The ansible playbook assumes that you have installed Openshift on your local dev
 #### Minishift
 
 The local environment can be run on [Minishift](https://docs.okd.io/latest/minishift/index.html "Minishift Homepage"). To install and configure
-Minishift, please see the [Minishift ReadMe](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/MINISHIFT.md "Minishift Readme") file.
+Minishift, please see the [Minishift ReadMe](https://github.com/stericbro/estafet-microservices-scrum/blob/master/MINISHIFT.md "Minishift Readme") file.
 
 #### Openshift CLI (oc)
 The playbook also assumes that the Openshift CLI `oc` is installed on the same machine that you have installed Ansible on. If this is not the case, you will need to amend the Ansible `microservices-scrum.yml` file and modify the `hosts: localhost` directive.
@@ -109,7 +109,7 @@ Installing and configuring the scrum demo application to openshift manually is a
 Clone the master repository to a directory of your choice.
 
 ```
-$ git clone --recurse-submodules https://github.com/Estafet-LTD/estafet-microservices-scrum.git
+$ git clone --recurse-submodules https://github.com/stericbro/estafet-microservices-scrum.git
 $ git checkout master
 $ git submodule foreach 'git checkout master || :'
 $
@@ -125,7 +125,7 @@ $ vi iniventory
 localhost ansible_connection=local openshift=192.168.42.34:8443
 ```
 
-If you are using Minishift, the `openshift` value is taken from the output of starting minishift (see the [Minishift README](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/MINISHIFT.md)):
+If you are using Minishift, the `openshift` value is taken from the output of starting minishift (see the [Minishift README](https://github.com/stericbro/estafet-microservices-scrum/blob/master/MINISHIFT.md)):
 
 ```
 OpenShift server started.
@@ -140,7 +140,7 @@ Otherwise, the value is the public IP or DNS address of the Master OpenShift nod
 #### Step 3
 Run the playbook. The playbook takes about 15 mins complete.
 
-> Note:- If you are using Minishift, you set the Minishift configuration to specify the resources available. (see the [Minishift README](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/MINISHIFT.md#configuration)).
+> Note:- If you are using Minishift, you set the Minishift configuration to specify the resources available. (see the [Minishift README](https://github.com/stericbro/estafet-microservices-scrum/blob/master/MINISHIFT.md#configuration)).
 
 ```
 $ cd estafet-microservices-scrum/ansible
@@ -172,11 +172,11 @@ ansible-playbook reset-data-playbook.yml
 ```
 
 ### Test Environment Setup
-Click [here](https://github.com/Estafet-LTD/estafet-microservices-scrum-qa#test-environment-setup) to find the test environment setup details.
+Click [here](https://github.com/stericbro/estafet-microservices-scrum-qa#test-environment-setup) to find the test environment setup details.
 
 ### DevOps Environment Setup
 
-Please refer to [DEVOPS.md](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/DEVOPS.md)
+Please refer to [DEVOPS.md](https://github.com/stericbro/estafet-microservices-scrum/blob/master/DEVOPS.md)
 
 ## Environments
 
@@ -193,12 +193,12 @@ runs automated integration tests.
 ## Architecture
 The application consists of 9 microservices + the user interface. These are deployed to openshift as pods. The postgres pod instance contains 6 databases, each "owned" by a microservice. The A-MQ broker processes messages sent to topics and distributes these to microservices that have subscribedtothose topics.
 
-![alt tag](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/readme/PodComponents.png)
+![alt tag](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/readme/PodComponents.png)
 
 ### Domain Model
 Here's the overall business domain model.
 
-![alt tag](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/readme/UnboundedDomainModel.png)
+![alt tag](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/readme/UnboundedDomainModel.png)
 
 ## Distributed Monitoring
 Here's a short summary of the Opentracing and Jaeger with microservices.

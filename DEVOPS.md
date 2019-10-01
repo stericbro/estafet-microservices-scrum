@@ -1,13 +1,13 @@
 # Creating the devops Environment For the Estafet Microservices Scrum Demo Application
 ## Contents
 
-* [Overview](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/DEVOPS.md#prerequisites#overview)
-* [Prerequisites](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/DEVOPS.md#prerequisites)
-* [Forking the GitHub Repositories](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/DEVOPS.md#forking-the-github-repositories)
-* [Creating the Infrastructure](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/DEVOPS.md#creating-the-infrastructure)
-* [Deploying OpenShift](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/DEVOPS.md#deploying-openshift)
-* [Creating the Devops Environments](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/DEVOPS.md#creating-the-devops-environments)
-* [Configuring Jenkins](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/DEVOPS.md#configuring-jenkins)
+* [Overview](https://github.com/stericbro/estafet-microservices-scrum/blob/master/DEVOPS.md#prerequisites#overview)
+* [Prerequisites](https://github.com/stericbro/estafet-microservices-scrum/blob/master/DEVOPS.md#prerequisites)
+* [Forking the GitHub Repositories](https://github.com/stericbro/estafet-microservices-scrum/blob/master/DEVOPS.md#forking-the-github-repositories)
+* [Creating the Infrastructure](https://github.com/stericbro/estafet-microservices-scrum/blob/master/DEVOPS.md#creating-the-infrastructure)
+* [Deploying OpenShift](https://github.com/stericbro/estafet-microservices-scrum/blob/master/DEVOPS.md#deploying-openshift)
+* [Creating the Devops Environments](https://github.com/stericbro/estafet-microservices-scrum/blob/master/DEVOPS.md#creating-the-devops-environments)
+* [Configuring Jenkins](https://github.com/stericbro/estafet-microservices-scrum/blob/master/DEVOPS.md#configuring-jenkins)
 
 ## <a name="overview"/>Overview
 
@@ -33,7 +33,7 @@ There is also a PostgreSQL database, implemented on AWS [RDS](https://aws.amazon
 
 1. You must configure your [AWS IAM Security Credentials](https://eu-west-2.console.aws.amazon.com/console/home?region=eu-west-2# "AWS settings menu"):
 
-   ![AWS settings menu](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/aws_settings_menu.png)
+   ![AWS settings menu](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/aws_settings_menu.png)
 
    Choose `My Security Credentials` and follow the instructions. You only need to configure your IAM security credentials.
 
@@ -216,7 +216,7 @@ To deploy OpenShift to the infrastructure you just created:
    ssh-bastion:
        ssh -t -A ec2-user@$$(terraform output bastion-public_ip)
    ssh-master:
-	   ssh -t -A ec2-user@$$(terraform output bastion-public_ip) ssh master.openshift.local
+       ssh -t -A ec2-user@$$(terraform output bastion-public_ip) ssh master.openshift.local
    ```
 
    ssh on to the bastion:
@@ -279,34 +279,34 @@ Point a browser at `https://<jenkins host>`. The login credentials are `admin` a
 
 There are some manual steps needed to configure Jenkins.
 
-* [Configure the Jenkins Maven Settings File](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/DEVOPS.md#configure-jenkins-maven-settings-file)
-* [Install the Jenkins Pipeline Maven Plugin](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/DEVOPS.md#install-jenkins-pipeline-maven-plugin)
-* [Create GitHub credentials](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/DEVOPS.md#create-github-credentials)
-* [Configure GitHub Webhooks](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/DEVOPS.md#configure-github-webhooks)
+* [Configure the Jenkins Maven Settings File](https://github.com/stericbro/estafet-microservices-scrum/blob/master/DEVOPS.md#configure-jenkins-maven-settings-file)
+* [Install the Jenkins Pipeline Maven Plugin](https://github.com/stericbro/estafet-microservices-scrum/blob/master/DEVOPS.md#install-jenkins-pipeline-maven-plugin)
+* [Create GitHub credentials](https://github.com/stericbro/estafet-microservices-scrum/blob/master/DEVOPS.md#create-github-credentials)
+* [Configure GitHub Webhooks](https://github.com/stericbro/estafet-microservices-scrum/blob/master/DEVOPS.md#configure-github-webhooks)
 
 ### <a name="configure-jenkins-maven-settings-file"/> Configure the Jenkins Maven Settings File
 
 The Jenkins main screen is:
 
-![Jenkins main page](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_main_page.png)
+![Jenkins main page](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_main_page.png)
 
 Choose the `cicd` link:
 
-![Jenkins cicd page](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_cicd_page.png)
+![Jenkins cicd page](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_cicd_page.png)
 
 Choose `Config Files`:
 
-![Jenkins cicd add config files page](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_cicd_config_files_page.png)
+![Jenkins cicd add config files page](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_cicd_config_files_page.png)
 
 Choose `Add a new Config`:
 
-![Jenkins add Config file page](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_cicd_add_config_file_page.png)
+![Jenkins add Config file page](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_cicd_add_config_file_page.png)
 
 1. Select `Global Maven settings.xml`
 1. Set the ID field to `microservices-scrum`
 1. Click on `Submit`
 
-![Jenkins edit Jenkins Maven configuration](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_edit_global_maven_config_file.png)
+![Jenkins edit Jenkins Maven configuration](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_edit_global_maven_config_file.png)
 
 1. Set the ID field to `microservices-scrum`
 1. Set the Name field to `Microservices Scrum Global Maven Settings`
@@ -316,7 +316,7 @@ Choose `Add a new Config`:
 `Content` field. In the screen shot, all the comments in the file have been removed for clarity.
 1. Click on `Submit`:
 
-![Jenkins Global Maven configuration file](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_global_maven_config_file.png)
+![Jenkins Global Maven configuration file](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_global_maven_config_file.png)
 
 ### <a name="install-jenkins-pipeline-maven-plugin"/> Install the Jenkins Pipeline Maven Plugin
 
@@ -333,7 +333,7 @@ download this version:
     ```
     If the HTTP code is not `200`, the download failed.
 
-2. Follow the steps in [Upload and install the plugin](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/DEVOPS.md#upload-and-install-jenkins-plugin).
+2. Follow the steps in [Upload and install the plugin](https://github.com/stericbro/estafet-microservices-scrum/blob/master/DEVOPS.md#upload-and-install-jenkins-plugin).
 The driver `.hpi` file is `/tmp//pipeline-maven.hpi`.
 
 ### <a name="install-jenkins-cucumber-reports-plugin"/> Install the Jenkins Cucumber Reports Plugin
@@ -349,43 +349,43 @@ The Estafet Microservices Scrum `cicd` environment requires version 4.6.0 of the
    [stevebrown@6r4nm12 tmp]$
    ```
 
-2. Follow the steps in [Upload and install the plugin](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/DEVOPS.md#upload-and-install-jenkins-plugin).
+2. Follow the steps in [Upload and install the plugin](https://github.com/stericbro/estafet-microservices-scrum/blob/master/DEVOPS.md#upload-and-install-jenkins-plugin).
 The driver `.hpi` file is `/tmp/cucumber-reports.hpi`.
 
 #### <a name="upload-and-install-jenkins-plugin"/>Upload and install a Jenkins plugin
 
 2. From the Jenkins dropdown menu, choose `Manage Jenkins`, then `Manage Plugins`, then the `Advanced` tab:
 
-![Jenkins Manage Plugins Advanced Tab](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_manage_plugins_advanced_tab.png)
+![Jenkins Manage Plugins Advanced Tab](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_manage_plugins_advanced_tab.png)
 
 1. Choose the driver `.hpi` file to upload
 2. Choose `Upload`:
 
 This screenshot shows the result of installing the Jenkins Pipeline Maven plugin:
 
-![Jenkins Pipeline Maven Plugin Success](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_pipeline_maven_plugin_success.png)
+![Jenkins Pipeline Maven Plugin Success](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_pipeline_maven_plugin_success.png)
 
 ### <a name="install-jenkins-http-request-plugin"/> Install the Jenkins HTTP Request Plugin
 
 From the Jenkins dropdown menu, choose `Manage Jenkins`, then `Manage Plugins`, then the `Available` tab:
 
-![Jenkins Manage Plugins Available Tab](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_manage_plugins_available_tab.png)
+![Jenkins Manage Plugins Available Tab](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_manage_plugins_available_tab.png)
 
 1. Enter `HTTP Request` in the `Filter` field
 2. Check ``HTTP Request`` on thhe `Available` tab
 3. Click on `Install without restart`
 
-![Jenkins HTTP Request plugin installed](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_http_request_plugin_installed.png)
+![Jenkins HTTP Request plugin installed](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_http_request_plugin_installed.png)
 
 ### <a name="create-github-credentials"/> Create GitHub credentials
 
 From the Jenkins dropdown menu, choose `Credentials`:
 
-![Jenkins Credentials page](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_credentials_page.png)
+![Jenkins Credentials page](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_credentials_page.png)
 
 Click on the `global` dropdown list in the `Credentials` section. Then choose `Add credentials`:
 
-![Jenkins Add Credential page](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_add_github_username_password.png)
+![Jenkins Add Credential page](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_add_github_username_password.png)
 
 Leave the `Kind` and `Scope` fields as shown.
 
@@ -395,15 +395,15 @@ Leave the `Kind` and `Scope` fields as shown.
 1. Enter `GitHub username and password` in the `Description` field.
 1. Click on `OK` button:
 
-![Jenkins GitHub Credential page](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_github_credentials_page.png)
+![Jenkins GitHub Credential page](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_github_credentials_page.png)
 
 ### <a name="configure-github-webhooks"/> Configure GitHub Webhooks
 
-Please see [WEBHOOKS.md](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/WEBHOOKS.md)
+Please see [WEBHOOKS.md](https://github.com/stericbro/estafet-microservices-scrum/blob/master/WEBHOOKS.md)
 
 ## Restart Jenkins.
 
-To restart Jenkins, the URL is `https://jenkins-cicd.3.9.50.47.xip.io/restart` from [Get Jenkins Host](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/DEVOPS.md#get-jenkins-host).
+To restart Jenkins, the URL is `https://jenkins-cicd.3.9.50.47.xip.io/restart` from [Get Jenkins Host](https://github.com/stericbro/estafet-microservices-scrum/blob/master/DEVOPS.md#get-jenkins-host).
 
 Click on `OK` when prompted, then wait for Jenkins to complete restarting. You will then be asked to login again.
 
@@ -423,12 +423,12 @@ These are the build pipelines in Jenkins in the `cicd` environment:
 | `ci-task-api`         | `https://github.com/newowner/estafet-microservices-scrum-api-discovery`        |
 | `qa-pipeline`         | `https://github.com/newowner/estafet-microservices-scrum-api-gateway`          |
 
-[WEBHOOKS.md](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/WEBHOOKS.md) shows how to configure
+[WEBHOOKS.md](https://github.com/stericbro/estafet-microservices-scrum/blob/master/WEBHOOKS.md) shows how to configure
 the `ci-basic-ui` build pipeline and the `estafet-microservices-scrum-basic-ui` GitHub repository.
 
-Each of these GitHub repositories must be setup with a [GitHub Webhook](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/WEBHOOKS.md#configuring-github).
+Each of these GitHub repositories must be setup with a [GitHub Webhook](https://github.com/stericbro/estafet-microservices-scrum/blob/master/WEBHOOKS.md#configuring-github).
 
-In Jenkins, each build pipeline must be [configured to use the GitHub WebHook](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/WEBHOOKS.md#configure-build-pipeline-to-use-webhook).
+In Jenkins, each build pipeline must be [configured to use the GitHub WebHook](https://github.com/stericbro/estafet-microservices-scrum/blob/master/WEBHOOKS.md#configure-build-pipeline-to-use-webhook).
 
 ## <a name="release-pipeline-issues"/>Release Pipeline Issues
 
@@ -450,13 +450,13 @@ Scripts not permitted to use new groovy.util.XmlSlurper. Administrators can deci
 [Pipeline] // node
 [Pipeline] End of Pipeline
 org.jenkinsci.plugins.scriptsecurity.sandbox.RejectedAccessException: Scripts not permitted to use new groovy.util.XmlSlurper
-	    at org.jenkinsci.plugins.scriptsecurity.sandbox.whitelists.StaticWhitelist.rejectNew(StaticWhitelist.java:271)
-	    at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onNewInstance(SandboxInterceptor.java:174)
-	    at org.kohsuke.groovy.sandbox.impl.Checker$3.call(Checker.java:200)
-	    at org.kohsuke.groovy.sandbox.impl.Checker.checkedConstructor(Checker.java:205)
-	    at com.cloudbees.groovy.cps.sandbox.SandboxInvoker.constructorCall(SandboxInvoker.java:21)
-	    at WorkflowScript.run(WorkflowScript:60)
-	    at ___cps.transform___(Native Method)
+        at org.jenkinsci.plugins.scriptsecurity.sandbox.whitelists.StaticWhitelist.rejectNew(StaticWhitelist.java:271)
+        at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onNewInstance(SandboxInterceptor.java:174)
+        at org.kohsuke.groovy.sandbox.impl.Checker$3.call(Checker.java:200)
+        at org.kohsuke.groovy.sandbox.impl.Checker.checkedConstructor(Checker.java:205)
+        at com.cloudbees.groovy.cps.sandbox.SandboxInvoker.constructorCall(SandboxInvoker.java:21)
+        at WorkflowScript.run(WorkflowScript:60)
+        at ___cps.transform___(Native Method)
 
 Some of the stacktrace has been omitted for brevity.
 
@@ -465,11 +465,11 @@ Finished: FAILURE
 
 1. Click on `Administrators can decide whether to approve or reject this signature`:
 
-   ![Jenkins approve in-process script class](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_approve_script_class.png)
+   ![Jenkins approve in-process script class](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_approve_script_class.png)
 
 1. Click on the `approve` button  to approve the `groovy.util.XmlSlurper` class:
 
-   ![Jenkins in-process script class approved](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_script_class_approved.png)
+   ![Jenkins in-process script class approved](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_script_class_approved.png)
 
 1. Run the release pipeline again:
 
@@ -487,13 +487,13 @@ Finished: FAILURE
    [Pipeline] // node
    [Pipeline] End of Pipeline
    org.jenkinsci.plugins.scriptsecurity.sandbox.RejectedAccessException: Scripts not permitted to use method groovy.util.XmlSlurper parseText java.lang.String
-	       at org.jenkinsci.plugins.scriptsecurity.sandbox.whitelists.StaticWhitelist.rejectMethod(StaticWhitelist.java:262)
-	       at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:161)
-	       at org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:158)
-	       at org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:162)
-	       at com.cloudbees.groovy.cps.sandbox.SandboxInvoker.methodCall(SandboxInvoker.java:17)
-	       at WorkflowScript.run(WorkflowScript:60)
-	       at ___cps.transform___(Native Method)
+           at org.jenkinsci.plugins.scriptsecurity.sandbox.whitelists.StaticWhitelist.rejectMethod(StaticWhitelist.java:262)
+           at org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:161)
+           at org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:158)
+           at org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:162)
+           at com.cloudbees.groovy.cps.sandbox.SandboxInvoker.methodCall(SandboxInvoker.java:17)
+           at WorkflowScript.run(WorkflowScript:60)
+           at ___cps.transform___(Native Method)
 
    Some of the stacktrace has been omitted for brevity.
 
@@ -503,7 +503,7 @@ Finished: FAILURE
 
 1. Click on the `approve` button  to approve the `groovy.util.XmlSlurper parseText java.lang.String` method:
 
-   ![Jenkins in-process script method approved](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_script_method_approved.png)
+   ![Jenkins in-process script method approved](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_script_method_approved.png)
 
 1. Run the build again:
 
@@ -538,8 +538,8 @@ Finished: FAILURE
 1. Approve the `groovy.lang.GroovyObject getProperty java.lang.String (groovy.util.slurpersupport.NodeChild.version)`
 method, as above. The approved classes and methods should be:
 
-   ![Jenkins approved script classes and methods](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_approved_script_classes_methods.png)
+   ![Jenkins approved script classes and methods](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_approved_script_classes_methods.png)
 
 1. Run the build again - it should succeed.
 
-   ![Jenkins successful release pipeline](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_successful_release_pipeline.png)
+   ![Jenkins successful release pipeline](https://github.com/stericbro/estafet-microservices-scrum/blob/master/md_images/devops/jenkins_successful_release_pipeline.png)

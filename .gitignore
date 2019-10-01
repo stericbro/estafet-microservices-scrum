@@ -11,4 +11,3 @@ terraform.tfstate.backup
 .terraform.tfstate.lock.info
 rds-inventory.cfg
 *.idea
-

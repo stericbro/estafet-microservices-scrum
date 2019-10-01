@@ -132,14 +132,14 @@ under the License.
    | repository, to be used as an alternate download site. The mirror site will be the preferred
    | server for that repository.
    |-->
-	<mirrors>
-		<mirror>
-			<id>Nexus</id>
-			<name>Nexus Public Mirror</name>
-			<url>http://nexus.cicd.svc:8081/nexus/content/groups/public/</url>
-			<mirrorOf>central</mirrorOf>
-		</mirror>
-	</mirrors>
+    <mirrors>
+        <mirror>
+            <id>Nexus</id>
+            <name>Nexus Public Mirror</name>
+            <url>http://nexus.cicd.svc:8081/nexus/content/groups/public/</url>
+            <mirrorOf>central</mirrorOf>
+        </mirror>
+    </mirrors>
 
   <!-- profiles
    | This is a list of profiles which can be activated in a variety of ways, and which can modify

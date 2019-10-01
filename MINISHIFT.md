@@ -13,11 +13,11 @@ VMWare supports nested virtualisation for Intel processors, but there are licens
 
 ## Contents
 
-* [Prerequisites](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/MINISHIFT.md#Prerequisites)
-* [Nested Virtualization with Intel](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/MINISHIFT.md#nested-virtualization)
-* [Installation](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/MINISHIFT.md#Installation)
-* [Configuration](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/MINISHIFT.md#Configuration)
-* [Running Minishift](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/MINISHIFT.md#running-minishift)
+* [Prerequisites](https://github.com/stericbro/estafet-microservices-scrum/blob/master/MINISHIFT.md#Prerequisites)
+* [Nested Virtualization with Intel](https://github.com/stericbro/estafet-microservices-scrum/blob/master/MINISHIFT.md#nested-virtualization)
+* [Installation](https://github.com/stericbro/estafet-microservices-scrum/blob/master/MINISHIFT.md#Installation)
+* [Configuration](https://github.com/stericbro/estafet-microservices-scrum/blob/master/MINISHIFT.md#Configuration)
+* [Running Minishift](https://github.com/stericbro/estafet-microservices-scrum/blob/master/MINISHIFT.md#running-minishift)
 
 ## <a name="Prerequisites"></a>Prerequisites
 
@@ -105,7 +105,7 @@ The necessary steps to run Minishift nested in a Linux VM are as follows:
 * Download and install the [VMWare Workstation Player](https://www.vmware.com/uk/products/workstation-player.html "VMWare Workstation PLayer")
 * Run the VMWare Player and create a Linux VM with the Virtualization engine '`Virtualize Intel VT-x/EPT or AMD-V/RVI`' box checked under the Processors tab
 * Follow [these instructions](https://docs.fedoraproject.org/en-US/quick-docs/using-nested-virtualization-in-kvm/ "nested virtualization") on the Fedora website.
-* [Install Minishift](https://github.com/Estafet-LTD/estafet-microservices-scrum/blob/master/MINISHIFT.md#Installation) in the Linix VM you just created.
+* [Install Minishift](https://github.com/stericbro/estafet-microservices-scrum/blob/master/MINISHIFT.md#Installation) in the Linix VM you just created.
 
 ## <a name="Installation"></a>Install Minishift
 

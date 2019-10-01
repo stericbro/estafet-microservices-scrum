@@ -1,10 +1,19 @@
 ---
-- name: Verify if variables are set
-  fail:
-    msg: "[Target directory] and/or [OpenShift host] is not defined. Please edit vars.yml"
-  when: (workdir is undefined) or (openshift is undefined)
 
-- name: Login in OpenShift as {{ username }}
+- debug:
+    msg: "Executing initial  createb environments setup ..."
+
+- name: Verify workdir is set
+  fail:
+    msg: "Workdir is not defined. Please add '-e workdir <directory>' to the Ansible command line"
+  when: workdir is undefined
+
+- name: Verify openshift is set
+  fail:
+    msg: "openshift is not defined.  Please add '-e openshift <OpenShift web console URL>' to the Ansible command line"
+  when: openshift is undefined
+
+- name: Login in to OpenShift as {{ username }} on {{ openshift }}.
   shell: "oc login --insecure-skip-tls-verify=true -u {{ username }} -p {{ password }} {{ openshift }}"
   tags:
     - openshift
@@ -13,12 +22,12 @@
   shell: "oc patch scc restricted -p '{\"runAsUser\":{\"type\":\"RunAsAny\"}}'"
   when: adjust_scc
 
-- name: Create Workdir
+- name: Create Workdir {{ workdir }}
   file:
     path: "{{ workdir }}"
     state: directory
 
-- name: Checkout source code from Github
+- name: Checkout source code for the microservices from Github into the {{ project }} environment.
   git:
     repo: "{{ github }}/{{ item.repo }}"
     dest: "{{ workdir }}/{{ item.repo }}"
@@ -27,7 +36,7 @@
   tags:
     - git
 
-- name: Checkout xpaas image stream from Github
+- name: Checkout xpaas image stream (openshift-ansible) from Github
   git:
     repo: "https://github.com/openshift/openshift-ansible.git"
     dest: "{{ workdir }}/openshift-ansible"
@@ -36,4 +45,5 @@
   tags:
     - git
 
-
+- debug:
+    msg: "Executed initial create environments setup."
