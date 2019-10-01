@@ -16,7 +16,7 @@ trap "exit 2" SIGHUP SIGINT SIGQUIT SIGPIPE SIGTERM
 function install_dev_tools() {
   echo "INFO: Installing developmment tools ..."
   # Install dev tools.
-  yum install -y "@Development Tools" python2-pip openssl-devel python-devel gcc libffi-devel || {
+  sudo yum install -y "@Development Tools" python2-pip openssl-devel python-devel gcc libffi-devel || {
     echo "ERROR: failed to install development tools."
     return 1
   }
@@ -24,7 +24,7 @@ function install_dev_tools() {
 
 function install_postgresql() {
   echo "INFO: Installing PostgreSQL ..."
-  yum install -y postgresql-devel || {
+  sudo yum install -y postgresql-devel || {
     echo "ERROR: failed to install postgresql-devel."
     return 1
   }
@@ -32,7 +32,7 @@ function install_postgresql() {
 
 function install_ansible() {
   echo "INFO: Installing Ansible 2.6.5 ..."
-  pip install -I ansible==2.6.5 || {
+  sudo pip install -I ansible==2.6.5 || {
     echo "ERROR: failed to install Ansible."
     return 1
   }
@@ -40,7 +40,7 @@ function install_ansible() {
 
 function insall_psycopg2() {
   echo "INFO: Installing psycopg2 ..."
-  pip install psycopg2 || {
+  sudo pip install psycopg2 || {
     echo "ERROR: failed to install psycopg2."
     return 1
   }
@@ -82,8 +82,8 @@ function install_oc_client_tools() {
   chmod 777 "${oc_file}"
   chmod 777 "${kubectl_file}"
 
-  mv "${oc_file}" /usr/local/bin
-  mv "${kubectl_file}" /usr/local/bin
+  sudo mv "${oc_file}" /usr/local/bin
+  sudo mv "${kubectl_file}" /usr/local/bin
 }
 
 function clone_github_repo() {
@@ -128,7 +128,7 @@ function clone_openshift_ansible() {
   chown -R ec2-user:ec2-user "${repo}"
 }
 
-function install_ansible() {
+function install_openshift() {
   echo "INFO: Installing OpenShift ..."
   echo "INFO: Checking OpenShift prerequisites ..."
   ANSIBLE_HOST_KEY_CHECKING=False /usr/local/bin/ansible-playbook -i ./inventory.cfg ./openshift-ansible/playbooks/prerequisites.yml || {
@@ -144,11 +144,8 @@ function install_ansible() {
   echo "INFO: Intalled OpenShift OK."
 }
 
-# Elevate privileges, retaining the environment.
-sudo -E su
-
 echo "INFO: updating packages ..."
-yum -y update
+sudo yum -y update
 
 install_dev_tools || exit 1
 install_postgresql || exit 1
@@ -158,7 +155,7 @@ install_oc_client_tools || exit 1
 clone_github_repo || exit 1
 install_database || exit 1
 clone_openshift_ansible || exit 1
-install_ansible || exit 1
+install_openshift || exit 1
 
 # If needed, uninstall with the below:
 # ansible-playbook playbooks/adhoc/uninstall.yml
